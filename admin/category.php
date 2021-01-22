@@ -24,8 +24,27 @@
 
                     <div class="col-xs-6">
 
+                        <?php
 
-                        <form action="">
+                        if(isset($_POST['btn'])){
+                            $name   =  $_POST['cat_title']  ;
+
+
+                            if ($name == "" || empty($name)){
+                                echo "not be empty"  ;
+                            }
+                            else{
+
+                                $q = "INSERT INTO category (cat_title) VALUE  ('$name')" ;
+                                mysqli_query($connection , $q) ;
+                            }
+                        }
+
+
+                        ?>
+
+<!--                        add ::-->
+                        <form action="" method="post">
 
                             <div class="form-group">
 
@@ -40,6 +59,76 @@
                                 <input type="submit" class="btn btn-primary" name="btn" value="add">
 
                             </div>
+                        </form>
+
+
+<!--                         update ::-->
+                        <form action="" method="post">
+
+                            <div class="form-group">
+
+                                <label for="cat_title">update category</label>
+
+<?php
+
+                            if (isset($_GET['edite'])) {
+    $id_up = $_GET['edite2'];
+   //  echo $id_up ;
+    // die();
+
+
+
+    $query_up = "SELECT * FROM category WHERE cat_id = '$id_up'";
+    $select_up = mysqli_query($connection, $query_up);
+
+    while ($r = mysqli_fetch_assoc($select_up)) {
+        $cat_i = $r['cat_id'];
+        $cat_t = $r['cat_title'];
+
+        // echo $cat_t;
+        ?>
+
+        <?php  echo "<input type='text' class='form-control' name='cat_title' value='$cat_t'>" ;  ?>
+    <?php  }}  ?>
+
+
+                                <?php
+
+
+
+
+                                if (isset($_POST['btn1'])){
+
+
+                                    $name = $_POST['cat_title'] ;
+
+                                    $query_update = "UPDATE category SET cat_title = '$name' WHERE cat_id = '$id_up'" ;
+
+                                    $update =  mysqli_query($connection   , $query_update) ;
+
+                                   // header("Location:category.php");
+
+                                }
+
+
+
+
+                                ?>
+
+
+
+               
+
+
+                            </div>
+
+                            <div class="form-group">
+
+
+                                <input type="submit" class="btn btn-primary" name="btn1" value="update">
+
+                            </div>
+
                         </form>
                     </div>
 
@@ -59,6 +148,7 @@
                             <tr>
                                 <th>cat id </th>
                                 <th>cat title</th>
+
                             </tr>
                             </thead>
 
@@ -73,11 +163,16 @@
                                echo "<tr>" ;
                                echo "<td>{$cat_id}</td>" ;
                                echo "<td>{$cat_title}</td>" ;
+                               echo "<td><a href='includes/delete.php?delite=$cat_id'>Delete</a></td>" ;
+                               echo "<td><a href='category.php?edite=$cat_id&edite2=$cat_id'>edite</a></td>" ;
                                echo"</tr>" ;
 
                             }
 
                             ?>
+
+
+
 
                             </tbody>
 
