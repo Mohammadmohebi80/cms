@@ -45,7 +45,7 @@
                 <a href="javascript:;" data-toggle="collapse" data-target="#post"><i class="fa fa-fw fa-arrows-v"></i> POST<i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="post" class="collapse">
                     <li>
-                        <a href="#">View all post</a>
+                        <a href="../../../CMS/admin/post.php">View all post</a>
                     </li>
                     <li>
                         <a href="#">add post </a>
@@ -57,7 +57,7 @@
 
 
             <li>
-                <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> category</a>
+                <a href="../../../CMS/admin/category.php"><i class="fa fa-fw fa-wrench"></i>category</a>
             </li>
 
             <li class="active">
@@ -69,7 +69,7 @@
                 <a href="javascript:;" data-toggle="collapse" data-target="#user"><i class="fa fa-fw fa-arrows-v"></i> user<i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="user" class="collapse">
                     <li>
-                        <a href="#">View all user</a>
+                        <a href="../post.php">View all user</a>
                     </li>
                     <li>
                         <a href="#">add user </a>
