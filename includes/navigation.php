@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="../../CMS/index.php">Start Bootstrap</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -20,7 +20,9 @@
 
                 while ($row  = mysqli_fetch_array($select_all)){
                     $cat_title  = $row['cat_title'] ;
-                    echo "<li ><a href='#'>{$cat_title}</a></li>"  ;
+                    $cat_id = $row['cat_id'] ;
+
+                    echo "<li ><a href='../../CMS/cat.php?cat_id=$cat_id'>{$cat_title}</a></li>"  ;
                 }
 
 

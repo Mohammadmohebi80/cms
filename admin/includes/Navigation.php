@@ -60,10 +60,15 @@
                 <a href="../../../CMS/admin/category.php"><i class="fa fa-fw fa-wrench"></i>category</a>
             </li>
 
-            <li class="active">
-                <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> comment</a>
-            </li>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#comment"><i class="fa fa-fw fa-arrows-v"></i> COMMENT<i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="comment" class="collapse">
+                    <li>
+                        <a href="../../../CMS/admin/comment.php">View all comments</a>
+                    </li>
 
+                </ul>
+            </li>
 
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#user"><i class="fa fa-fw fa-arrows-v"></i> user<i class="fa fa-fw fa-caret-down"></i></a>

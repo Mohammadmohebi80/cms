@@ -47,7 +47,25 @@
             <td><?php echo $ID  ; ?></td>
             <td><?php echo $Author  ; ?></td>
             <td><?php echo $Title  ; ?></td>
-            <td><?php echo $category  ; ?></td>
+
+
+           <?php 
+             $query_up = "SELECT * FROM category WHERE cat_id = '$category'";
+             $select_up = mysqli_query($connection, $query_up);
+
+    while ($r = mysqli_fetch_assoc($select_up)) {
+        $cat_i = $r['cat_id'];
+        $cat_t = $r['cat_title'];
+        echo "<td> {$cat_t}</td>";
+    }
+        ?>
+
+      
+
+            
+
+
+
             <td><?php echo $status  ; ?></td>
             <td><img class="img-responsive" width="300px" height="300px" src="../../CMS/images/<?php echo $image?>"   ></td>
             <td><?php echo $Tags  ; ?></td>

@@ -16,12 +16,15 @@ if (isset($_GET['id'])){
         $Tags = $row['post_tags'] ;
         $Comment_count = $row['post_coment_count'] ;
         $Date = $row['post_date'] ;
+        $content  = $row['post_contant'] ;
     }
 
 }
 
 
 ?>
+
+
 
 
 
@@ -95,31 +98,62 @@ if (isset($_GET['id'])){
         </select>
     </div>
 
+<?php $str =  "../../../CMS/images/".$image ; ?>
 
 
     <div class="form-group">
         <label for="post_image">Post Image</label>
+        <img src=<?php echo $str?> class="img-responsive" height="100px" width="100px">
         <input type="file"  name="image">
     </div>
 
     <div class="form-group">
         <label for="post_tags">Post Tags</label>
-        <input type="text" class="form-control" name="post_tags">
+        <input type="text" class="form-control" name="post_tags" value=<?php echo $Tags?>>
     </div>
 
     <div class="form-group">
         <label for="post_content">Post Content</label>
         <textarea class="form-control" name="post_content" id="" cols="30" rows="10">
+            <?php echo $content?>
          </textarea>
     </div>
 
 
 
     <div class="form-group">
-        <input class="btn btn-primary" type="submit" name="create_post" value="Publish Post">
+        <input class="btn btn-primary" type="submit" name="update_post" value="Publish Post">
     </div>
 
 
 </form>
+
+<?php
+
+if (isset($_POST['update_post'])){
+
+    $title = $_POST['title'] ;
+    $id = $_POST['id'] ;
+    $author = $_POST['Author'] ;
+    $status_up = $_POST['status'] ;
+    $post_category = $_POST['post_category'] ;
+    $post_status = $_POST['post_status'] ;
+    $image_up = $_FILES['image']['name'] ;
+    $tags = $_POST['post_tags'] ;
+    $con = $_POST['post_content'] ;
+
+
+     $sql_query = "UPDATE post  SET 
+     
+     post_title ='$title'
+     
+ 
+     WHERE post_id = '$id'" ;
+     $up =  mysqli_query($connection , $sql_query) ;
+
+
+
+}
+?>
 
 

@@ -1,5 +1,5 @@
 <?php
-
+include 'headers.php' ;
 if (isset($_POST['create_post'])){
 //    echo "ok" ;
     $post_category = $_POST['post_category'] ;
