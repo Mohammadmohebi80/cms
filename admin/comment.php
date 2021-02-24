@@ -27,25 +27,7 @@
 
 
                     <?php
-
-                    if (isset($_GET['source'])){
-                        $soure = $_GET['source'] ;
-
-                        switch ($soure){
-                            case "add_post" ;
-                                include "../../CMS/admin/includes/add_post.php" ;
-                                break ;
-
-                            case "update_post" ;
-                                include "../../CMS/admin/includes/update_post.php" ;
-                                break ;
-
-                            default :
-                                include "../../CMS/admin/includes/View_all_comment.php" ;
-
-                        }
-
-                    }
+                    include '../../CMS/admin/includes/View_all_comment.php' ;
 
 
                     ?>
