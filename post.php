@@ -107,7 +107,7 @@
             <!-- Posted Comments -->
 
             <?php
-            $q = "SELECT * FROM comments WHERE comment_post_id = '$the_id' AND  comment_status='Approve' ORDER  BY comment_id DESC " ;
+            $q = "SELECT * FROM comments WHERE comment_post_id = '$the_id'  AND  comment_status='Approve' ORDER  BY comment_id DESC " ;
             $sel_all = mysqli_query($connection , $q) ;
             while ($row = mysqli_fetch_assoc($sel_all)){
 
@@ -115,6 +115,8 @@
                 $author = $row['comment_author'];
                 $date = $row['comment_date'] ;
                 ?>
+
+
 
 
 

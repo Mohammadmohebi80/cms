@@ -22,7 +22,7 @@
                     $cat_title  = $row['cat_title'] ;
                     $cat_id = $row['cat_id'] ;
 
-                    echo "<li ><a href='../../CMS/cat.php?cat_id=$cat_id'>{$cat_title}</a></li>"  ;
+                    echo "<li ><a href='../../CMS/cat.php?p_id=$cat_id'>{$cat_title}</a></li>"  ;
                 }
 
 

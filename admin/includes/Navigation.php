@@ -74,7 +74,7 @@
                 <a href="javascript:;" data-toggle="collapse" data-target="#user"><i class="fa fa-fw fa-arrows-v"></i> user<i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="user" class="collapse">
                     <li>
-                        <a href="../post.php">View all user</a>
+                        <a href="../../../CMS/admin/user.php">View all user</a>
                     </li>
                     <li>
                         <a href="#">add user </a>

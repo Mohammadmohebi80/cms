@@ -19,11 +19,11 @@
 
             <?php
 
-            if (isset($_GET['cat_id'])){
+            if (isset($_GET['p_id'])){
 
-                $the_cat_id = $_GET['cat_id'] ;
+                $the_cat = $_GET['p_id'] ;
             }
-            $query = "SELECT * FROM post WHERE post_category='$the_cat_id'" ;
+            $query = "SELECT * FROM post WHERE post_category='$the_cat'" ;
 
             $select_All = mysqli_query($connection , $query) ;
 
