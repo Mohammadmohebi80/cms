@@ -6,7 +6,7 @@
     <div id="wrapper">
 
         <?php if ($connection){
-            echo "con" ;
+//            echo "con" ;
         }?>
 
         <!-- Navigation -->
@@ -22,8 +22,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            welcome
-                            <small>Author</small>
+                            Welcome
+                            <small><?php  echo  $_SESSION['username']?></small>
                         </h1>
 
                     </div>
